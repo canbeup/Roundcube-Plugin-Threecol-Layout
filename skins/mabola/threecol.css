@@ -66,7 +66,6 @@
   border-bottom: none;
   min-width: 300px;
   width: 95%;
-  background: none;
   height: 20px;
   border:none;
 }
@@ -84,8 +83,8 @@
 #messagelist td.from,
 #messagelist td.subject {
   display: inline-block;
-  padding-top: 2px;
-  padding-bottom: 0;
+  padding-top: 2px !important;
+  padding-bottom: 0 !important;
 }
 
 #messagelist tr {
@@ -93,23 +92,23 @@
 }
 
 #messagelist tr.selected {
-  color: #FFF !important;
-  background-color: #4DB0D2 !important;
+  background: #FFC none repeat scroll 0px 0px !important;
+  color: #AAA !important;
 }
 
 #messagelist td.labels,
 #messagelist td.size,
 #messagelist td.date {
   right: 0px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
   font-size: 10px;
   color: #666D74;
   height: 20px;
 }
 
 table.fixedcopy thead {
-  background: transparent -moz-linear-gradient(left center , #E3F2F6 0px, #D6EAF3 14px, #D6EAF3 100%) repeat scroll 0% 0%;
+  background: #F6F6F6 none repeat scroll 0%;
   border-bottom: 1px solid #C6C6C6;
 }
 

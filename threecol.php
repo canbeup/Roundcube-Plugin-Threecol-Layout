@@ -19,10 +19,15 @@ class threecol extends rcube_plugin
 		$no_override = array_flip($rcmail->config->get('dont_override', array()));
 		$this->driver = $this->home .'/skins/'. $rcmail->config->get('skin') .'/func.php';
 
+		// Config hook
+		if ($rcmail->config->get('previewpane_layout', 'below') == 'right') {
+		  $this->add_hook('config_get', array($this,'config_get'));
+		}
+
 		if (is_readable($this->driver)) {
 			if ($rcmail->task == 'mail' && $rcmail->action == '' && $rcmail->config->get('previewpane_layout', 'below') == 'right') {
 					$this->add_hook('render_page', array($this, 'render'));
-					$this->include_script($this->local_skin_path() .'/threecol.js');
+					$this->include_script('threecol.js');
 					$this->include_stylesheet($this->local_skin_path() .'/threecol.css');
 			}
 			elseif ($rcmail->task == 'settings' && !isset($no_override['previewpane_layout'])) {
@@ -87,6 +92,26 @@ class threecol extends rcube_plugin
 		}
 
 		return $args;
+	}
+
+	/**
+	 * Modification de la configuration utilisateur pour s'adapter au mobile
+	 *
+	 * @param array $args
+	 */
+	public function config_get($args) {
+	  switch ($args['name']) {
+	    // Liste des colonnes affichées
+	    case 'list_cols' :
+	      $args['result'] = array('status','date','from','subject','attachment','flag','labels','size');
+	      break;
+	    case 'dont_override' :
+	      if (! is_array($args['result']))
+	        $args['result'] = array();
+	        $args['result'][] = 'list_cols';
+	        break;
+	  }
+	  return $args;
 	}
 }
 

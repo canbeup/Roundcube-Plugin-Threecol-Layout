@@ -3,15 +3,15 @@
  */
 
 function init_threecol_splitter() {
-	var previewframe = $('#mailpreviewframe').is(':visible');
-	$('#mailpreviewtoggle').unbind('click');
-	$('#mailpreviewtoggle').click(function(e){ toggle_preview_pane_tc(e); return false });
+  var previewframe = $('#mailpreviewframe').is(':visible');
+  $('#mailpreviewtoggle').unbind('click');
+  $('#mailpreviewtoggle').click(function(e){ toggle_preview_pane_tc(e); return false });
 
-	mailviewsplit = new rcube_splitter({ id:'mailviewsplittertc', p1:'#mailview-tc-mid', p2:'#mailview-tc-right',
-		orientation:'v', relative:true, start:700, min:650, size:12 });
+  mailviewsplit = new rcube_splitter({ id:'mailviewsplittertc', p1:'#mailview-tc-mid', p2:'#mailview-tc-right',
+    orientation:'v', relative:true, start:400, min:340, size:12 });
 
-	if (previewframe)
-		mailviewsplit.init();
+  if (previewframe)
+    mailviewsplit.init();
 }
 
 function toggle_preview_pane_tc(e)
@@ -24,7 +24,7 @@ function toggle_preview_pane_tc(e)
 		topstyles, bottomstyles, uid;
 
 	frame.toggle();
-	button.removeClass().addClass(visible ? 'enabled' : 'closed');
+	button.removeClass(visible ? 'closed' : 'enabled').addClass(visible ? 'enabled' : 'closed');
 
 	if (visible) {
 		$('#mailview-tc-mid').css({ width:'700px', right: 'auto' });

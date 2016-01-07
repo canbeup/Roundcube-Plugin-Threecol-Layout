@@ -62,13 +62,13 @@
   border-bottom: 1px solid #DDD;
 }
 
-#messagelist td { 
-  border-bottom: none;
-  min-width: 300px;
-  width: 95%;
-  background: none;
-  height: 20px;
-  border:none;
+#messagelist td {	
+	border-bottom: none;
+	min-width: 300px;
+	width: 95%;
+	background: none;
+	height: 20px;
+	border:none;
 }
 
 #messagelist td.labels,
@@ -89,35 +89,35 @@
 }
 
 #messagelist tr {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 #messagelist tr.selected {
-  color: #FFF !important;
+	color: #FFF !important;
   background-color: #4DB0D2 !important;
 }
 
 #messagelist td.labels,
 #messagelist td.size,
 #messagelist td.date {
-  right: 0px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  font-size: 10px;
-  color: #666D74;
-  height: 20px;
+	right: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 10px;
+	color: #666D74;
+	height: 20px;
 }
 
 table.fixedcopy thead {
-  background: transparent -moz-linear-gradient(left center , #E3F2F6 0px, #D6EAF3 14px, #D6EAF3 100%) repeat scroll 0% 0%;
+  background: #F6F6F6 none repeat scroll 0%;
   border-bottom: 1px solid #C6C6C6;
 }
 
 table.fixedcopy th {
-  display: none;
+	display: none;
 }
 
 table.fixedcopy #rcmthreads {
-  display: block;
-  border-bottom: none;
+	display: block;
+	border-bottom: none;
 }
